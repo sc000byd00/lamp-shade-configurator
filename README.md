@@ -2,6 +2,8 @@
 
 Design a 3D-printable lamp shade in the browser. Pick a shape and a surface pattern, wrap your own photo around it as a lithophane, switch the light on to see how the wall glows, and download a watertight STL or 3MF. The design checks run on every change, so you can see before you print whether the shade fits your printer, whether the wall is thick enough and where it overhangs.
 
+**Live demo:** <https://sc000byd00.github.io/lamp-shade-configurator/>
+
 Everything runs in the browser. Nothing is uploaded, photos included.
 
 ## Features
