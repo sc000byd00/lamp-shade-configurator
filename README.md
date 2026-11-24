@@ -20,7 +20,7 @@ Everything runs in the browser. Nothing is uploaded, photos included.
   - Thinnest wall, measured along the surface normal so rib flanks count.
   - Overhang share and the steepest angle, with a coloured overhang view.
   - Plate ring around the holder hole and room for the bulb.
-- **Estimates:** weight per material and a rough print time.
+- **Weight** per material from the mesh volume.
 - **Export:**
   - Binary STL and 3MF (core spec, millimetres, centred on a 256 mm plate).
   - Each export is checked first: closed, consistently oriented, no degenerate triangles. A shade that fails the bed or hole check is not exported.
@@ -67,7 +67,7 @@ npm run build     # static site in dist/
 
 - The lamp holder hole is a free value. Measure the thread of your holder; sizes vary between makers.
 - PLA softens at about 60 °C. Use LED bulbs only and keep the shade away from halogen or filament bulbs.
-- The print time is a rough estimate. The slicer gives the real one.
+- No print time in the app: it depends too much on printer, material and profile. The slicer gives the real one.
 - The light preview is a real-time approximation, not a physical light simulation.
 
 ## License

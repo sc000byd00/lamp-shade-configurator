@@ -102,9 +102,3 @@ export function weightGrams(volumeMm3: number, density: number): number {
   return (volumeMm3 / 1000) * density
 }
 
-/** Very rough: walls print at about 12 mm³/s on a current bed slinger, plus travel and layer changes. */
-export function printHours(volumeMm3: number, heightMm: number, layer = 0.2): number {
-  const extrude = volumeMm3 / 12
-  const layers = heightMm / layer
-  return (extrude + layers * 4) / 3600
-}

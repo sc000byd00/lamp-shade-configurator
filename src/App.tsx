@@ -10,7 +10,7 @@ import {
   type ShapeKind,
 } from './geometry/params'
 import type { LumaImage } from './geometry/pattern'
-import { MATERIALS, PRINTERS, printHours, runChecks, weightGrams, type Check } from './geometry/checks'
+import { MATERIALS, PRINTERS, runChecks, weightGrams, type Check } from './geometry/checks'
 import { checkEdges } from './geometry/analysis'
 import { to3mf, toStl } from './geometry/exporters'
 import type { ShadeMesh } from './geometry/shade'
@@ -186,7 +186,7 @@ export default function App() {
   }, [result, params, printer, overhangLimit])
 
   const grams = result ? weightGrams(result.volume, MATERIALS[view.material].density) : 0
-  const hours = result ? printHours(result.volume, params.height) : 0
+  const sizeLabel = result ? `${(result.bboxMax[0] - result.bboxMin[0]).toFixed(0)} × ${(result.bboxMax[2] - result.bboxMin[2]).toFixed(0)}` : '–'
 
   const applyPreset = (pr: Preset) => {
     setParams((p) => ({ ...p, ...pr.params }))
@@ -354,7 +354,7 @@ export default function App() {
           <div className="report">
             <div className="stats">
               <div><b>{grams.toFixed(0)} g</b><span>{MATERIALS[view.material].label}</span></div>
-              <div><b>≈ {hours.toFixed(1)} h</b><span>print time, 0.2 mm</span></div>
+              <div><b>{sizeLabel}</b><span>Ø × height, mm</span></div>
               <div><b>{result ? ((result.indices.length / 3) / 1000).toFixed(0) + 'k' : '–'}</b><span>triangles</span></div>
             </div>
             <ul className="checks">

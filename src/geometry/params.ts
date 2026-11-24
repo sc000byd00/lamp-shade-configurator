@@ -54,8 +54,8 @@ export const DEFAULT_PARAMS: ShadeParams = {
   fitting: 'plate',
   holeDiameter: 42,
   plateThickness: 2.4,
-  segments: 240,
-  rows: 160,
+  segments: 360,
+  rows: 220,
 }
 
 /** Lithophanes need a finer mesh to show the picture. */

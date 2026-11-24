@@ -59,8 +59,9 @@ export function makePattern(p: ShadeParams, image?: LumaImage): PatternField {
       return {
         at: (th, t) => {
           const u = (th + twist * t) / TAU
-          // Rounded ribs: |sin| gives soft crests and narrow valleys.
-          return depth * Math.pow(Math.abs(Math.sin(Math.PI * n * u)), 0.7) * fade(t)
+          // Smooth ribs without a crease, so the mesh does not alias along the twist.
+          const c = 0.5 - 0.5 * Math.cos(2 * Math.PI * n * u)
+          return depth * Math.pow(c, 0.8) * fade(t)
         },
       }
     case 'waves':
