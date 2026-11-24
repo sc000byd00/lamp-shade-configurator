@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/litho.ts","./src/main.tsx","./src/useshade.ts","./src/worker.ts","./src/geometry/analysis.ts","./src/geometry/checks.ts","./src/geometry/exporters.ts","./src/geometry/params.ts","./src/geometry/pattern.ts","./src/geometry/profile.ts","./src/geometry/shade.test.ts","./src/geometry/shade.ts","./src/scene/scene.tsx"],"version":"5.9.3"}
