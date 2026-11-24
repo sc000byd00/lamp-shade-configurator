@@ -141,7 +141,7 @@ function Lamp({ result, params, view }: { result: BuildResult | null; params: Sh
   const plateY = plate ? (pendant ? 0 : baseH + stem) : 0
   const bulbZ = plate ? Math.min(params.plateThickness + 18 + bulbR, H * 0.5) : Math.min(28, H * 0.3)
   const holderR = plate ? params.holeDiameter / 2 - 0.6 : 0
-  const material = useShadeMaterial(view, params.pattern === 'facets', bulbZ, Math.max(70, H * 0.6))
+  const material = useShadeMaterial(view, false, bulbZ, Math.max(70, H * 0.6))
 
   const shadeGroupProps = pendant
     ? { position: [0, 0, 0] as const, rotation: [Math.PI / 2, 0, 0] as const }
@@ -235,11 +235,11 @@ function Room({ lightOn }: { lightOn: boolean }) {
     <>
       <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
         <circleGeometry args={[0.6, 96]} />
-        <meshStandardMaterial color={lightOn ? '#5c4331' : '#b38a60'} roughness={0.5} />
+        <meshStandardMaterial color={lightOn ? '#5c4331' : '#b38a60'} roughness={0.5} dithering />
       </mesh>
       <mesh position={[0, 0.6, -0.55]} receiveShadow>
         <planeGeometry args={[3, 1.6]} />
-        <meshStandardMaterial color={lightOn ? '#2c2824' : '#ebe5d9'} roughness={0.95} />
+        <meshStandardMaterial color={lightOn ? '#2c2824' : '#ebe5d9'} roughness={0.95} dithering />
       </mesh>
     </>
   )
